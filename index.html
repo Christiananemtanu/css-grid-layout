@@ -7,20 +7,91 @@
     <title>grid</title>
 
     <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+        }
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-            grid-template-rows: auto;
-            grid-template-areas: 
-            
-            ;
+            grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr;
+            grid-template-areas:
+            'header header header header header'
+            'nav nav nav nav nav'
+            'links main main main ads'
+            'footer footer footer footer footer';
+            border-radius: 10px;
+            grid-gap: 1rem;
         }
+
+        .container > div {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 20px 10px;
+            font-size: 20px;
+        }
+           
+
+        .item2{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+        }
+
+
+        .item1 { 
+            grid-area: header; 
+        }
+
+        .item2 { 
+            grid-area: nav;
+        }
+       
+        .item3 { 
+            grid-area: links; 
+        }
+        .item4 { 
+            grid-area: main; 
+        }
+        .item5 { 
+            grid-area: ads; 
+        }
+        .item6 { 
+            grid-area: footer; 
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                column-count: 5;
+            }          
+        }
+
+        @media (max-width: 900px) and (min-width:600px) {
+            .container {
+                column-count: 5;
+            }
+        }
+
+        @media (max-width: 600px){
+            .container {
+                float: none;
+                width: 100%;
+            }   
+        }
+    
+
+
 
     </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="item1"><header>header</header></div>
+        <div class="item1">The Header</div>
         <div class="item2">
             <a href="#" class="nav1">Nav1</a>
             <a href="#" class="nav2">Nav2</a>
@@ -29,9 +100,11 @@
             <a href="#" class="nav5">Nav5</a>
             </div>
         <div class="item3">Links</div>
-        <div class="item4">Main content</div>
-        <div class="item5">Ads</div>
-        <div class="item6"><Footer>Footer</Footer></div>    
+        <div class="item4"> <h1> Main Content </h1> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+             Proin quis suscipit velit. Vivamus bibendum, acru et pulvinar viverra, nibh urna mollis lectus,
+              sed ornare velit turpis sed dui.</p></div>
+        <div class="item5">Ads</div>  
+        <div class="item6">The footer</div>
     </div>
 
     

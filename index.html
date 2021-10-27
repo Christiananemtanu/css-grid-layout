@@ -29,11 +29,31 @@
             grid-gap: 1rem;
         }
 
+
         .container > div {
             border: 1px solid #000000;
             text-align: left;
             padding: 20px 10px;
             font-size: 20px;
+        }
+
+        @media (min-width: 900px) {
+            .container {
+                column-count: 5;
+            }          
+        }
+
+        @media (max-width: 900px) and (min-width:600px) {
+            .container {
+                column-count: 5;
+            }
+        }
+
+        @media (max-width: 600px){
+          .container {
+              display: flex;
+              flex-direction: column;
+          }   
         }
            
 
@@ -63,26 +83,6 @@
         .item6 { 
             grid-area: footer; 
         }
-
-        @media (min-width: 900px) {
-            .container {
-                column-count: 5;
-            }          
-        }
-
-        @media (max-width: 900px) and (min-width:600px) {
-            .container {
-                column-count: 5;
-            }
-        }
-
-        @media (max-width: 600px){
-            .container {
-                float: none;
-                width: 100%;
-            }   
-        }
-    
 
 
 
